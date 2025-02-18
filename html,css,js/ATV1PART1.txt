@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PART1</title>
+</head>
+<body>
+    
+    <h1>Verificar notas</h1>
+    <label for="nota">Nota:</label> <input type="text" id="nota">
+    <button id="verificarBotao">Verificar</button>
+
+    <script>
+        const verificar = document.getElementById("verificarBotao");
+        verificar.addEventListener("click", epa);
+
+        document.getElementById("nota").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                epa();
+            }
+        });
+                      
+      function epa() {
+            let nota = parseFloat(document.getElementById("nota").value);
+
+            if (!isNaN(nota)) {
+                if (nota === 10) {
+                    alert("Nota máxima, parabéns!");
+                } else if (nota >= 7 && nota<10) {
+                    alert("Aprovado!");
+                } else if (nota >= 4 && nota<7) {
+                    alert("Recuperação.");                    
+                }
+                else if (nota<4){
+                    alert(" Reprovado");
+                }
+                 else {
+                    alert("Por favor, insira uma nota válida.");
+                      }
+            }
+             else {
+                alert("Por favor, insira uma nota válida.");
+                  }
+        }
+        
+    </script>
+</body>
+</html>
+       
